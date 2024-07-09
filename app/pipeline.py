@@ -5,12 +5,10 @@ import joblib
 import logging
 import os
 import joblib
-
+from app.config import logging
 from app.config import __version__ as _version
 
 PACKAGE_ROOT = "api"
-
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 
 def custom_label_encoder(X, columns):

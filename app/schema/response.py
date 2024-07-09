@@ -4,13 +4,13 @@ from pydantic import BaseModel
 
 class BaseResponse(BaseModel):
     success: bool
-    message: Optional[str]
+    message: Optional[str] = None
 
 
 class StaffPromotionResult(BaseModel):
     promote: Optional[str]
     prediction_proba: Optional[float]
-    model_version: Optional[str]
+    version: Optional[str]
     staff_info: Optional[dict]
 
 class StaffPromotionResponse(BaseResponse):

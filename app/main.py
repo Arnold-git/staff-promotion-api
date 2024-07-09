@@ -6,18 +6,16 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 from app.api.api_v1.api import api_router
 from app.config import settings
-from loguru import logger
 import logging
 import uvicorn
 from app.pipeline import load_encoders, load_model
 from contextlib import asynccontextmanager
 from app.utils.fastapi_globals import g, GlobalsMiddleware
 
+
 def customise_openapi(app):
     if app.openapi_schema:
         return app.openapi_schema
-
-
 
     openapi_schema = get_openapi(
         title="StaffPromotionAPI",
@@ -46,6 +44,7 @@ async def lifespan(app: FastAPI):
     del model
     del encoders
     g.cleanup()
+
 
 
 app = FastAPI(

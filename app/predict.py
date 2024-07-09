@@ -6,28 +6,29 @@ from app.utils.fastapi_globals import g
 import logging
 
 def predict_staff_promotion(input_data: 
-                    Union[pd.DataFrame, dict]) ->dict:
+                    Union[pd.DataFrame, dict]) -> dict:
 
-    test_df = pd.DataFrame(input_data, index=[0])
+        input_df = pd.DataFrame(input_data, index=[0])
 
-    X_test = test_df.drop(columns=['EmployeeNo'],axis =1)
+        relevant_data = input_df.drop(columns=['EmployeeNo'],axis =1)
 
-    model = g.model
-    encoders = g.encoders
-    logging.info(f"Encoder {encoders}")
-    X_test_encoded = apply_encoders(X_test, encoders)
-    
-    X_test_final = add_age_and_experience(X_test_encoded)
-    
-    # Make predictions
-    prediction = model.predict(X_test_final)[0]
-    predictions_prob = model.predict_proba(X_test_final)[:, 1]
 
-    return {
-        "prediction": int(prediction),
-        "prediction_prob": float(predictions_prob[0]),
-        "model_version": f"{_version}"
-    }
+        model = g.model
+        encoders = g.encoders
+        relevant_data_encoded = apply_encoders(relevant_data, encoders)
+        
+        relevant_data_final = add_age_and_experience(relevant_data_encoded)
+        
+        # Make predictions
+        prediction = model.predict(relevant_data_final)[0]
+        predictions_prob = model.predict_proba(relevant_data_final)[:, 1]
+
+        return {
+            "prediction": int(prediction),
+            "prediction_prob": float(predictions_prob[0]),
+            "model_version": f"{_version}"
+        }
+
 
 
 # if __name__ == "__main__":

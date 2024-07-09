@@ -9,7 +9,7 @@ class StaffInfo(BaseModel):
     Gender: Optional[str] = "Male"
     Channel_of_Recruitment: Optional[str] = 'Direct Internal process'
     Trainings_Attended: Optional[int] = 2
-    Year_of_birth: Optional[str] = 1991
+    Year_of_birth: Optional[int] = 1991
     Last_performance_score: Optional[float] = 0.0
     Year_of_recruitment: Optional[int] = 2018
     Targets_met: Optional[int] = 0
