@@ -3,3 +3,4 @@ venv/
 env/
 .env
 Pipfile.lock
+*model_0.0.2.joblib

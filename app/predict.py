@@ -7,11 +7,10 @@ import logging
 
 def predict_staff_promotion(input_data: 
                     Union[pd.DataFrame, dict]) -> dict:
-
+        
         input_df = pd.DataFrame(input_data, index=[0])
 
         relevant_data = input_df.drop(columns=['EmployeeNo'],axis =1)
-
 
         model = g.model
         encoders = g.encoders
