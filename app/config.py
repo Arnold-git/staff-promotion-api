@@ -19,7 +19,6 @@ class Settings(BaseSettings):
 
     PROJECT_NAME: str = "Staff Promotion API"
     API_V1_STR: str = "/api/v1"
-    # API_KEY: str = Field(alias=os.getenv("API_KEY"))
     SERVER_NAME: str = "StaffPromotionApp"
     MODEL_PATH: str = "app/trained_model/model_0.0.1.joblib"
     ENCODER_PATH: str = "app/trained_model/encoding.joblib"

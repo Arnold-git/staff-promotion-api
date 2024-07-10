@@ -12,6 +12,7 @@ def predict_staff_promotion(input_data:
 
         relevant_data = input_df.drop(columns=['EmployeeNo'],axis =1)
 
+        # get the loaded model and encoder
         model = g.model
         encoders = g.encoders
         relevant_data_encoded = apply_encoders(relevant_data, encoders)
