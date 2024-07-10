@@ -28,25 +28,3 @@ def predict_staff_promotion(input_data:
             "model_version": f"{_version}"
         }
 
-
-
-# if __name__ == "__main__":
-#     data = {'EmployeeNo': 'YAK/S/00011',
-#             'Division': 'Information Technology and Solution Support',
-#             'Qualification': "nan",
-#             'Gender': 'Male',
-#             'Channel_of_Recruitment': 'Direct Internal process',
-#             'Trainings_Attended': 2,
-#             'Year_of_birth': 1991,
-#             'Last_performance_score': 0.0,
-#             'Year_of_recruitment': 2018,
-#             'Targets_met': 0,
-#             'Previous_Award': 0,
-#             'Training_score_average': 69,
-#             'State_Of_Origin': 'OGUN',
-#             'Foreign_schooled': 'Yes',
-#             'Marital_Status': 'Married',
-#             'Past_Disciplinary_Action': 'No',
-#             'Previous_IntraDepartmental_Movement': 'No',
-#             'No_of_previous_employers': '1'}
-#     print(predict_on_test(data))
