@@ -4,7 +4,7 @@ import numpy as np
 
 class StaffInfo(BaseModel):
     EmployeeNo: Optional[str] = "YAK/S/00011"
-    Division: Optional[str] = "'Information Technology and Solution Support'"
+    Division: Optional[str] = "Information Technology and Solution Support"
     Qualification: Optional[str] = "nan"
     Gender: Optional[str] = "Male"
     Channel_of_Recruitment: Optional[str] = 'Direct Internal process'
